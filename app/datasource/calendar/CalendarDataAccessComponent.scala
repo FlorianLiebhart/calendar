@@ -10,11 +10,7 @@ import scala.slick.model.ForeignKeyAction
 import util._
 import util.CustomColumnTypes._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  * @author Florian Liebhart
-  */
+
 trait CalendarDataAccessComponent {
 
   self: UserDataAccessComponent =>
@@ -118,7 +114,7 @@ trait CalendarDataAccessComponent {
         ).exists
       )
 
-    /** */
+    
     def appointmentsFromUsers(userIds: Seq[Int]): Query[AppointmentTable, Appointment] =
       appointments.filter(a =>
         appointmentBelongsToTag.filter(abtt =>
@@ -128,7 +124,7 @@ trait CalendarDataAccessComponent {
         ).exists
       )
 
-    /** */
+    
     def appointmentsFromUsers(userIds: Seq[Int], from: Column[Option[DateTime]], to: Column[Option[DateTime]]): Query[AppointmentTable, Appointment] = 
       appointmentsFromUsers(userIds).filter(a => !((from.isNotNull && a.end < from) || (to.isNotNull && a.start > to)))
 
@@ -162,10 +158,7 @@ trait CalendarDataAccessComponent {
   }
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 trait CalendarDataAccessComponentImpl extends CalendarDataAccessComponent {
 
   self: UserDataAccessComponent =>

@@ -11,7 +11,7 @@ import datasource.user._
 import service._
 import service.protocol._
 
-/** */
+
 case class LoginData(name: String, password: String)
 
 object Login
@@ -19,13 +19,13 @@ object Login
           ExecutionEnvironment with
           ResponseHandling {
 
-  /** */
+  
   def error(message: String) = Redirect(routes.Login.index).flashing("error" -> message)
 
-  /** */
+  
   def login(user: User) = Redirect(routes.Calendar.calendar).withSession("username" -> user.name, "userid" -> user.id.toString)
 
-  /** */
+  
   def authenticate(loginData: LoginData): Future[SimpleResult] = {
 
     val userByNameRequest = (Services.userService ? GetUserByName(loginData.name)).expecting[UserByName]
@@ -41,7 +41,7 @@ object Login
     }
   }
 
-  /** */
+  
   val form = Form(
     mapping(
       "username"   -> nonEmptyText,
@@ -49,7 +49,7 @@ object Login
     )(LoginData.apply)(LoginData.unapply)
   )
 
-  /** */
+  
   def index = Action { implicit request =>
     if (!request.session.get("username").isEmpty && !request.session.get("userid").isEmpty) {
       Redirect(routes.Calendar.calendar)
@@ -58,7 +58,7 @@ object Login
     }
   }
 
-  /** */
+  
   def login = Action.async { implicit request =>
     form.bindFromRequest.fold(
       form => future { error(form.errors.head.key + " is required") },
@@ -66,6 +66,6 @@ object Login
     )
   }
 
-  /** */
+  
   def logout = Action{ implicit request => Redirect(routes.Login.index).withNewSession }
 }

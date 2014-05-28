@@ -8,19 +8,13 @@ import scala.slick.driver.PostgresDriver.simple._
 
 import service.protocol._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 object UserService {
 
   def props(db: Database): Props = Props(classOf[UserService], db)
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 class UserService(db: Database)
   extends Actor with
           ActorLogging with

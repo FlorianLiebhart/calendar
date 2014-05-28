@@ -3,11 +3,6 @@ package controllers
 import play.api.mvc._
 import play.api.mvc.Security._
 
-/**
-  *
-  * @author Florian Liebhart
-  * @author Simon Kaltenbacher
-  */
 trait Restricted {
 
   case class AuthenticatedUser(id: Int, name: String)

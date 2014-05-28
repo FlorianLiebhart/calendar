@@ -14,20 +14,13 @@ import service.protocol._
 
 import util._
 
-/**
- *
- * @author Simon Kaltenbacher
- */
+
 object ProposalService {
 
   def props(db: Database): Props = Props(classOf[ProposalService], db)
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  * @author Florian Liebhart
-  */
+
 class ProposalService(db: Database)
   extends Actor with 
           ActorLogging with
@@ -36,10 +29,10 @@ class ProposalService(db: Database)
           ProposalDataAccessComponentImpl with
           ExceptionHandling {
 
-  /** */
+  
   protected object userDataAccess extends UserDataAccessModuleImpl
 
-  /** */
+  
   protected object calendarDataAccess extends CalendarDataAccessModuleImpl
 
   protected object proposalDataAccess extends ProposalDataAccessModuleImpl

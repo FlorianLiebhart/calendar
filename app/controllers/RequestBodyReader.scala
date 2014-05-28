@@ -9,8 +9,8 @@ import scala.concurrent._
 
 /**
  *
- * @author Simon Kaltenbacher
- * @author Florian Liebhart
+ *
+ * 
  */
 trait RequestBodyReader {
 

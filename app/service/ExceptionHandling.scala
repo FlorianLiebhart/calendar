@@ -8,10 +8,7 @@ import scala.slick.SlickException
 
 import service.protocol._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 trait ExceptionHandling {
 
   self: Actor =>

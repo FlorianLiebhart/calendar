@@ -19,37 +19,31 @@ import util.CustomColumnTypes._
 import util.JodaTimeExtensions._
 import util.JsonConversion._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 object FreeTimeSlotService {
 
   def props(db: Database): Props = Props(classOf[FreeTimeSlotService], db)
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 class FreeTimeSlotService(db: Database)
   extends Actor with
           ActorLogging with
           UserDataAccessComponentImpl with
           CalendarDataAccessComponentImpl {
 
-  /** */
+  
   protected object userDataAccess extends UserDataAccessModuleImpl
 
-  /** */
+  
   protected object calendarDataAccess extends CalendarDataAccessModuleImpl
 
   import calendarDataAccess._
 
-  /** */
+  
   private type Acc = (Seq[TimeSlot], DateTime)
 
-  /** */
+  
   def datesBetween(from: DateTime, to: DateTime) =
     (0 to Days.daysBetween(from, to).getDays).map(from + _.days)
 

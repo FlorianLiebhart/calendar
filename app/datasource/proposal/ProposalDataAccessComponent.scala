@@ -15,10 +15,7 @@ import Vote.Vote
 
 import util._
 
-/**
-  *
-  * @author Christoph Goettschkes
-  */
+
 trait ProposalDataAccessComponent {
   
   self: UserDataAccessComponent =>
@@ -139,10 +136,7 @@ trait ProposalDataAccessComponent {
   }
 }
 
-/**
-  *
-  * @author Christoph Goettschkes
-  */
+
 trait ProposalDataAccessComponentImpl extends ProposalDataAccessComponent {
   
   self: UserDataAccessComponent =>

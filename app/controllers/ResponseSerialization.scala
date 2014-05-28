@@ -19,8 +19,8 @@ import java.util.concurrent.TimeoutException
 
 /**
  *
- * @author Simon Kaltenbacher
- * @author Florian Liebhart
+ *
+ * 
  */
 trait ResponseSerialization {
 

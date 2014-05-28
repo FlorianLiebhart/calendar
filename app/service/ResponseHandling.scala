@@ -5,10 +5,7 @@ import scala.reflect.ClassTag
 
 import service.protocol._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 trait ResponseHandling {
 
   self: ExecutionEnvironment =>

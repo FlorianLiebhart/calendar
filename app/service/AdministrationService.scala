@@ -16,19 +16,13 @@ import service.protocol._
 
 import util.Color
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 object AdministrationService {
 
   def props(db: Database): Props = Props(classOf[AdministrationService], db)
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 class AdministrationService(db: Database)
   extends Actor with
           ActorLogging with

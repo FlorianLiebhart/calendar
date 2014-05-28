@@ -2,11 +2,7 @@ package util
 
 import scala.util.matching.Regex
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  * @author Florian Liebhart
-  */
+
 object Color {
 
   val HexCode = """(#[0-9a-zA-Z]{6})""".r
@@ -55,10 +51,7 @@ object Color {
   ) 
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 case class Color private(val code: String) {
 
   override def toString() = code

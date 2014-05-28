@@ -10,19 +10,13 @@ import scala.slick.driver.PostgresDriver.simple._
 
 import service.protocol._
 
-/**
-  *
-  * @author Christoph Goettschkes
-  */
+
 object ConflictFindingService {
 
   def props: Props = Props(classOf[ConflictFindingService])
 }
 
-/**
-  *
-  * @author Christoph Goettschkes
-  */
+
 class ConflictFindingService extends Actor with ActorLogging {
 
   def findConflicts(conflicts: Seq[Appointment]) = {

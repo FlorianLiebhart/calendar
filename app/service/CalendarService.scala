@@ -18,20 +18,13 @@ import util._
 import util.CustomColumnTypes._
 import util.JsonConversion._
 
-/**
- *
- * @author Simon Kaltenbacher
- */
+
 object CalendarService {
 
   def props(db: Database): Props = Props(classOf[CalendarService], db)
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  * @author Florian Liebhart
-  */
+
 class CalendarService(db: Database)
   extends Actor with 
           ActorLogging with
@@ -39,10 +32,10 @@ class CalendarService(db: Database)
           CalendarDataAccessComponentImpl with
           ExceptionHandling {
 
-  /** */
+  
   protected object userDataAccess extends UserDataAccessModuleImpl
 
-  /** */
+  
   protected object calendarDataAccess extends CalendarDataAccessModuleImpl
 
   import calendarDataAccess._

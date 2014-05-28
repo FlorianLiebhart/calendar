@@ -3,13 +3,10 @@ package datasource.user
 import scala.slick.driver.PostgresDriver.simple._
 import scala.slick.lifted.Shape
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 trait UserDataAccessComponent {
 
-  /** */
+  
   trait UserDataAccessModule {
 
     /*
@@ -26,14 +23,14 @@ trait UserDataAccessComponent {
      * Shapes
      */
  
-    /** */
+    
     implicit val userShape: Shape[_, UserTable, User, UserTable]
 
     /*
      * Database tables
      */
 
-    /** */
+    
     trait AbstractUserTable extends Table[User] {
 
       def id       : Column[Int]
@@ -48,21 +45,18 @@ trait UserDataAccessComponent {
      * Queries
      */
 
-    /** */
+    
     val users: TableQuery[UserTable]
 
-    /** */
+    
     def usersById(id: Int): Query[UserTable, User] = users.filter(_.id === id)
 
-    /** */
+    
     def usersByName(name: String): Query[UserTable, User] = users.filter(_.name === name)
   }
 }
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 trait UserDataAccessComponentImpl extends UserDataAccessComponent {
 
   trait UserDataAccessModuleImpl extends UserDataAccessModule {
@@ -85,7 +79,7 @@ trait UserDataAccessComponentImpl extends UserDataAccessComponent {
      * Database tables
      */
 
-    /** */
+    
     class UserTableImpl(tag: Tag) extends Table[User](tag, "app_user") with AbstractUserTable {
 
       def id       = column[Int   ]("id"      , O.PrimaryKey, O.AutoInc)

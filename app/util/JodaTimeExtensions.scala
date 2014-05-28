@@ -2,10 +2,7 @@ package util
 
 import com.github.nscala_time.time.Imports._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 object JodaTimeExtensions {
 
   implicit def dateTime2RichDateTime(dateTime: DateTime): RichDateTime = new RichDateTime(dateTime)

@@ -15,10 +15,7 @@ import service.protocol._
 
 import util.JsonConversion._
 
-/**
-  *
-  * @author Simon Kaltenbacher
-  */
+
 object DebugWrites {
 
   /*

@@ -17,8 +17,6 @@ import scala.slick.driver.PostgresDriver.SchemaDescription
 import service.protocol._
 
 /** Global service accessor
-  *
-  * @author Simon Kaltenbacher
   */
 object Services extends ExecutionEnvironment with ResponseHandling {
 

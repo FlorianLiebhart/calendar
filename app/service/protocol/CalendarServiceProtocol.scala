@@ -8,7 +8,7 @@ import com.github.nscala_time.time.Imports._
 
 import util._
 
-/** */
+
 case class AppointmentWithTags(appointment: Appointment, tags: Seq[Tag])
 
 /*
